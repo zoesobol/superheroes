@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block title %}{% endblock%} Superheroes</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet"> 
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+            <div class="descuento"><p>Descuentos 20%</p></div>
+            <div class="titulo"><h1><a href="{% url 'home' %}">Tienda Superheroes</a></h1></div>
+            <nav class="navegacion">
+              <a href="{% url 'agregar_superheroe' %}">AGREGAR SUPERHEROE</a>
+                <a href="#">Contacto</a>
+              <a href="{% url 'login' %}">Login</a>
+              <a href="{% url 'register' %}">Registrarse</a>
+          </nav>
+    </header>
+
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+          <p>Todos los derechos reservados a FRONTEND 1</p>
+          <a href="https://zoesobol.github.io/"><img class="github" src="{% static 'img/github.png' %}"></a>
+        </div>
+      </div>
+    </footer><!-- End  Footer -->
+    
+    
+    </body>
+    
+    </html>

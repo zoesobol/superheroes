@@ -1,0 +1,170 @@
+.descuento {
+    background-color: #1CD1B0;
+}
+
+.descuento p {
+    margin:0;
+    padding: 5px;
+}
+
+
+.titulo {
+    background-color: #00669F;
+    color: #fff;
+    padding: 10px;
+}
+
+.navegacion {
+    background-color: #001D2D;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.navegacion a {
+    color: white;
+    padding: 10px;
+}
+
+.principal {
+    align-items: center;
+    padding: 60px 300px;
+
+}
+
+@media (max-width:1024px) {
+    .principal {
+        padding: 60px 0px;
+    }
+}
+
+.perfil {
+    border-radius: 50%;
+    border: 2px solid black;
+    width:100px;
+    height:100px;
+    position: absolute;
+    top:35%;
+    left: 30%;
+    object-fit: cover;
+}
+
+.card, .card-img-top {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.card-body {
+    margin-top: 40px;
+    width: 400px;
+}
+
+.nombre {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #00669F;
+    border: 1px solid #00669F;
+    position: relative;
+    left: 15%;
+    right: 10%;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+.login h3 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.login p {
+    text-align: center;
+    padding: 10px;
+}
+
+.login-form {
+    margin: 20px 0px;
+    border: 2px solid black;
+}
+
+.btn-login {
+    background-color:#1CD1B0;
+    border: 1px solid #1CD1B0;
+    border-radius: 50px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-register {
+    background-color:#1CD1B0;
+    border: 1px solid #1CD1B0;
+    border-radius: 50px;
+    width: 49%;
+    font-weight: bold;
+}
+
+.btn-register-grey {
+    background-color:grey;
+    border: 1px solid grey;
+    border-radius: 50px;
+    width: 49%;
+    font-weight: bold;
+    color: #fff;
+}
+
+@media (max-width:1000px) {
+    .login {
+        padding: 20vh 0px;
+    }
+    
+}
+
+#footer {
+    padding-top: 10px;
+    color: #f4f6fd;
+    font-size: 25px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #00669F;
+}
+
+#footer p {
+    font-size: 10px;
+}
+
+.github {
+    position: fixed;
+    bottom:1%;
+    right: 5%;
+    width: 100px;
+}
+
+
+.agregar-form {
+    background: #00669F;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    padding: 20px;
+    margin-bottom: 5em;
+    color: white;
+}
+
+.titulo-agregar {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: white;
+    text-align: center;
+}

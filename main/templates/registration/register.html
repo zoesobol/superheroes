@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}Registrarse |{% endblock %}
+
+{% block content %}
+<div class="principal container">
+    <div class="login">
+        <h3 class="titulo-login">Registro</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    {{ form.first_name }}
+                </div>
+                <div class="form-group">
+                    {{ form.last_name }}
+                </div>
+                <div class="form-group">
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    {{ form.password1 }}
+                </div>
+                <div class="form-group">
+                    {{ form.password2 }}
+                </div>
+                <div class="form-group">
+                <select class="custom-select login-form form-control">
+                    <option selected>País</option>
+                    <option>Argentina</option>
+                    <option>Colombia</option>
+                    <option>Brasil</option>
+                  </select>
+                </div>
+            </div>
+            <button type="reset" class="btn btn-register-grey">Resetear</button>
+            <button type="submit" class="btn btn-register">Entrar</button>
+        </form>
+        <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">Ingresar</a></p>
+    </div>
+    
+
+
+
+</div>
+{% endblock %}
