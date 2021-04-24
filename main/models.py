@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from datetime import datetime, date
 from ckeditor.fields import RichTextField
+from s3upload.fields import S3UploadField
 
 # Create your models here.
 superpower_choices = (
@@ -20,9 +21,9 @@ hero_choices = (
 
 class Superheroe(models.Model):
     name = models.CharField(max_length=255)
-    header_image = models.ImageField(null=True, blank=True, upload_to="images/")
-    profile_image = models.ImageField(null=True, blank=True, upload_to="images/")
-    superpower = models.CharField(choices=superpower_choices, max_length=19, null=False, blank=False, default=None)
+    header_image = S3UploadField(dest='example_destination')
+    profile_image = S3UploadField(dest='example_destination')
+    superpower = models.CharField(choices=superpower_choices, max_length=19, null=True, blank=True, default=None)
     heroe_villano = models.CharField(choices=hero_choices, max_length=15, null=False, blank=False, default=None)
     description = RichTextField(blank=True, null=True)
     date = models.DateField()

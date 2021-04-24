@@ -5,6 +5,7 @@ from . import models
 from bootstrap_datepicker_plus import DatePickerInput
 from django.forms.widgets import DateInput
 from ckeditor.fields import RichTextField
+from s3upload.widgets import S3UploadWidget
 
 class FormularioRegistro(UserCreationForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'login-form form-control', 'placeholder': 'Email'}))
@@ -39,17 +40,28 @@ class LoginForm(AuthenticationForm):
 
 
 
+superpower_choices = (
+    ('Volar', 'Volar'),
+    ('Superinteligencia', 'Superinteligencia'),
+    ('Vista de rayo láser', 'Vista de rayo láser'),
+    ('Billetera gorda', 'Billetera gorda'),
+)
+
+
 class SuperheroeForm(forms.ModelForm):
+    
+
+
     name = forms.CharField(label="Nombre", widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre del Superheroe'}))
-    header_image = forms.ImageField(label="Imagen de fondo", widget=forms.FileInput(attrs={'class': 'form-control'}))
-    profile_image = forms.ImageField(label="Foto de perfil", widget=forms.FileInput(attrs={'class': 'form-control'}))
+    header_image = forms.URLField(label="Imagen de fondo", widget=S3UploadWidget(dest='example_destination'))
+    profile_image = forms.URLField(label="Foto de Perfil", widget=S3UploadWidget(dest='example_destination'))
+    superpower = forms.MultipleChoiceField(required=False, choices=superpower_choices, label='Superheroes', widget=forms.CheckboxSelectMultiple(attrs={'class': 'form-check-input', 'type':'checkbox'}))
 
     class Meta:
         model = models.Superheroe
         fields= '__all__'
         widgets = {
-            'superpower': forms.CheckboxSelectMultiple(attrs={'empty_label':'None',' class': 'form-check-input', 'type':'checkbox'}),
-            'heroe_villano': forms.RadioSelect(attrs={'empty_label':'None','class': 'form-check-input', 'type':'radio'}),
+            'heroe_villano': forms.RadioSelect(attrs={'class': 'form-check-input', 'type':'radio'}),
             'date': DateInput(attrs={'type': 'date', 'class': 'form-control'}),
     }
 
@@ -59,5 +71,5 @@ class SuperheroeForm(forms.ModelForm):
         self.fields['description'].widget.attrs['class'] = 'form-control'
         self.fields['description'].label = 'Descripción'
         self.fields['date'].label = 'Fecha de Nacimiento'
-        self.fields['superpower'].label = 'Superpoderes'
         self.fields['heroe_villano'].label = '¿Héroe o Villano?'
+        #self.fields['superpower'] = forms.MultipleChoiceField(choices=superpower_choices, label='Superpoderes', widget=forms.CheckboxSelectMultiple(attrs={'class': 'form-check-input', 'type':'checkbox'}))

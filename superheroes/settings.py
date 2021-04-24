@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main',
     'ckeditor',
     'storages',
+    's3upload',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,7 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_URL = os.environ.get('AWS_URL')
 AWS_DEFAULT_ACL = None
 AWS_S3_REGION_NAME = 'us-east-1'
+S3UPLOAD_REGION = 'us-east-1'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 
@@ -148,11 +150,20 @@ MEDIA_URL = AWS_URL + '/media/'
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
+S3UPLOAD_DESTINATIONS = {
+    'example_destination': {
+        # REQUIRED
+        'key': 'images',
+    }
+}
+
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 
 LOGIN_REDIRECT_URL = 'home'
