@@ -70,7 +70,10 @@
 .card, .card-img-top {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    height: 200px;
+}
+
+.card-img-top {
+    height:200px;
 }
 
 .card-body {
