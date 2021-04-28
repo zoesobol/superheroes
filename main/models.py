@@ -21,8 +21,8 @@ hero_choices = (
 
 class Superheroe(models.Model):
     name = models.CharField(max_length=255)
-    header_image = S3UploadField(dest='example_destination')
-    profile_image = S3UploadField(dest='example_destination')
+    header_image = models.ImageField(null=True, blank=True, upload_to="images/")
+    profile_image = models.ImageField(null=True, blank=True, upload_to="images/")
     superpower = models.CharField(choices=superpower_choices, max_length=19, null=True, blank=True, default=None)
     heroe_villano = models.CharField(choices=hero_choices, max_length=15, null=False, blank=False, default=None)
     description = RichTextField(blank=True, null=True)

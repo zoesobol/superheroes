@@ -26,7 +26,7 @@ class LoginUsuario(auth_views.LoginView):
 
 def agregar_superheroe(request):
     if request.method == 'POST':
-        form = forms.SuperheroeForm(request.POST or None)
+        form = forms.SuperheroeForm(request.POST,request.FILES or None)
         print('0')
         if form.is_valid():
             print("hola1")

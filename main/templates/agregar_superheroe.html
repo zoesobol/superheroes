@@ -6,7 +6,7 @@
 <div class="agregar-form container d-flex justify-content-center">
     <div>
         <h3 class="titulo-agregar">Agregar Superheroe</h3>
-        <form method="POST" action="{% url 'agregar_superheroe' %}">
+        <form method="POST" action="{% url 'agregar_superheroe' %}" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.media }}
             {{ form.non_field_errors }}

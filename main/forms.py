@@ -53,8 +53,8 @@ class SuperheroeForm(forms.ModelForm):
 
 
     name = forms.CharField(label="Nombre", widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre del Superheroe'}))
-    header_image = forms.URLField(label="Imagen de fondo", widget=S3UploadWidget(dest='example_destination'))
-    profile_image = forms.URLField(label="Foto de Perfil", widget=S3UploadWidget(dest='example_destination'))
+    header_image = forms.ImageField(label="Imagen de fondo", widget=forms.FileInput(attrs={'class': 'form-control'}))
+    profile_image = forms.ImageField(label="Foto de perfil", widget=forms.FileInput(attrs={'class': 'form-control'}))
     superpower = forms.MultipleChoiceField(required=False, choices=superpower_choices, label='Superheroes', widget=forms.CheckboxSelectMultiple(attrs={'class': 'form-check-input', 'type':'checkbox'}))
 
     class Meta:

@@ -11,8 +11,8 @@
 <div class="row justify-content-center align-items-center principal">
     {% for superheroe in object_list %}
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{ superheroe.header_image }}">
-            <img class="perfil" src="{{ superheroe.profile_image }}">
+            <img class="card-img-top" src="{{ superheroe.header_image.url }}">
+            <img class="perfil" src="{{ superheroe.profile_image.url }}">
             <div class="card-body">
                 <h2 class="nombre">{{ superheroe.name }}</h2>
                 <p class="card-text">{{ superheroe.description|safe }}</p>

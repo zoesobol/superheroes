@@ -14,6 +14,16 @@
     padding: 10px;
 }
 
+.titulo a {
+    color: #fff;
+    font-weight: bold;
+}
+
+.titulo a:hover {
+    color:#1CD1B0;
+    text-decoration: none;
+}
+
 .navegacion {
     background-color: #001D2D;
     text-align: right;
@@ -24,6 +34,11 @@
 .navegacion a {
     color: white;
     padding: 10px;
+}
+
+.navegacion a:hover {
+    text-decoration: none;
+    color:#1CD1B0;
 }
 
 .principal {
@@ -168,3 +183,7 @@
     color: white;
     text-align: center;
 }
+
+.django-ckeditor-widget{
+    width: 100%;
+  }
